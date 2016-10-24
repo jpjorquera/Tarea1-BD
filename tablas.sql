@@ -25,12 +25,12 @@ CREATE TABLE usuario (
   mail varchar(45),
   fecha_registro date,
   login varchar(45),
-  pass password,
+  /*pass password,*/
   CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
 );
 
 CREATE TABLE items (
-  id_item number UNIQUE NOT NULL,
+  id_item number NOT NULL,
   nombre_item varchar(45),
   descripcion varchar(100),
   tipo_item varchar(45),
