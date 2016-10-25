@@ -23,5 +23,5 @@ CREATE VIEW view_maestros AS
   SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.puntos
   FROM pokemon, salvaje, pokedex,usuario
   WHERE usuario.ID_USUARIO = pokedex.USUARIO_ID AND
-  		(SELECT SUM(pokedex.ESTADO) FROM pokedex) = (SELECT poke_seq.NEXTVAL FROM dual) AND
-  		(ALTER SEQUENCE seq_name INCREMENT BY 1);
+  		(SELECT SUM(pokedex.ESTADO) FROM pokedex) = (SELECT poke_seq.NEXTVAL FROM dual)-1 AND
+  		(ALTER SEQUENCE seq_name INCREMENT BY -1);
