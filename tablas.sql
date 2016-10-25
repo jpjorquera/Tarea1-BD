@@ -59,7 +59,7 @@ CREATE TABLE adquisicion (
 CREATE TABLE mochila (
   id_mochila number NOT NULL,
   usuario_id number UNIQUE NOT NULL,
-  estado boolean,
+  estado number(1),
   CONSTRAINT mochila_pk PRIMARY KEY (id_mochila),
   CONSTRAINT fk_usuario
     FOREIGN KEY (usuario_id)
@@ -93,4 +93,16 @@ CREATE TABLE salvaje (
   CONSTRAINT fk_pokemon
     FOREIGN KEY (pokemon_id)
     REFERENCES pokemon(id_pokemon)
+);
+
+CREATE TABLE pokedex (
+  usuario_id number,
+  salvaje_id number,
+  estado number(1),
+  CONSTRAINT fk_usuario
+    FOREIGN KEY (usuario_id)
+    REFERENCES usuario(id_usuario),
+  CONSTRAINT fk_salvaje
+    FOREIGN KEY (salvaje_id)
+    REFERENCES salvaje(id_salvaje)
 );
