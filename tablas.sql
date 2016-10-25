@@ -103,3 +103,15 @@ CREATE TABLE salvaje (
     FOREIGN KEY (pokemon_id)
     REFERENCES pokemon(id_pokemon)
 );
+
+CREATE TABLE pokedex (
+  usuario_id number,
+  salvaje_id number,
+  estado number(1),
+  CONSTRAINT fk_usuario_pokedex
+    FOREIGN KEY (usuario_id)
+    REFERENCES usuario(id_usuario),
+  CONSTRAINT fk_salvaje
+    FOREIGN KEY (salvaje_id)
+    REFERENCES salvaje(id_salvaje)
+);
