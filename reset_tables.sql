@@ -7,3 +7,4 @@ drop table items;
 drop table mochila;
 drop table slots;
 drop table salvaje;
+drop table pokedex;

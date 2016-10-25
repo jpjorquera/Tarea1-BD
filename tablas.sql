@@ -25,7 +25,7 @@ CREATE TABLE usuario (
   mail varchar(45),
   fecha_registro date,
   login varchar(45),
-  /*pass password,*/
+  pass varchar(30),
   CONSTRAINT usuario_pk PRIMARY KEY (id_usuario)
 );
 
