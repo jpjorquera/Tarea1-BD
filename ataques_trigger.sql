@@ -1,0 +1,10 @@
+CREATE SEQUENCE atq_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER atq_t 
+BEFORE INSERT ON ataques
+FOR EACH ROW
+BEGIN
+  SELECT atq_seq.NEXTVAL
+  INTO   :new.id_ataque
+  FROM   dual;
+END;

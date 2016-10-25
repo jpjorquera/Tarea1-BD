@@ -11,8 +11,8 @@ CREATE TABLE ataques (
   id_ataque number NOT NULL,
   nombre_ataque varchar(45) NOT NULL,
   tipo_ataque varchar(45) NOT NULL,
-  poder number NOT NULL,
-  efectividad number NOT NULL,
+  poder number,
+  efectividad number,
   cantidad number NOT NULL,
   CONSTRAINT ataques_pk PRIMARY KEY (id_ataque)
 );
