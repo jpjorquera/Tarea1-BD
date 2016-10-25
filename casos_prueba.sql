@@ -32,3 +32,10 @@ INSERT ALL
   INTO ataques(nombre_ataque, tipo_ataque, efectividad, cantidad) VALUES ('cara susto', 'normal', 90, 10)
 SELECT * FROM dual;
 
+INSERT ALL
+  INTO items(nombre_item, descripcion, tipo_item) VALUES ('poke ball', 'A device for catching Pokemon. It is thrown like a ball at the target.', 'pokeballs')
+  INTO items(nombre_item, descripcion, tipo_item) VALUES ('master ball', 'The best type of Ball. It will catch any wild Pokemon without fail.', 'pokeballs')
+  INTO items(nombre_item, descripcion, tipo_item) VALUES ('portion', '	A spray-type medicine. It restores the HP of one Pokémon by just 20 points.', 'medicine')
+  INTO items(nombre_item, descripcion, tipo_item) VALUES ('super potion', 'A spray-type medicine. It restores the HP of one Pokémon by 50 points.', 'medicine')
+  INTO items(nombre_item, descripcion, tipo_item) VALUES ('rare candy', 'A candy that raises the level of a single Pokémon by one', 'medicine')
+SELECT * FROM dual;
