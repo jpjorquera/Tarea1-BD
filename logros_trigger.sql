@@ -1,0 +1,10 @@
+CREATE SEQUENCE logros_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER logros_t
+BEFORE INSERT ON logros
+FOR EACH ROW
+BEGIN
+  SELECT logros_seq.NEXTVAL
+  INTO   :new.id_logro
+  FROM   dual;
+END;
