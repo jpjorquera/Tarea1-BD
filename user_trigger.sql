@@ -7,4 +7,5 @@ BEGIN
   SELECT user_seq.NEXTVAL
   INTO   :new.id_usuario
   FROM   dual;
+  :new.fecha_registro := SYSDATE;
 END;
