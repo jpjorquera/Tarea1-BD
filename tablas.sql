@@ -51,7 +51,7 @@ CREATE TABLE adquisicion (
   CONSTRAINT fk_logros
     FOREIGN KEY (logro_id)
     REFERENCES logros(id_logro),
-  CONSTRAINT fk_usuario
+  CONSTRAINT fk_usuario_adquisicion
     FOREIGN KEY (usuario_id)
     REFERENCES usuario(id_usuario)
 );
@@ -61,9 +61,9 @@ CREATE TABLE mochila (
   usuario_id number UNIQUE NOT NULL,
   estado number(1),
   CONSTRAINT mochila_pk PRIMARY KEY (id_mochila),
-  CONSTRAINT fk_usuario
+  CONSTRAINT fk_usuario_mochila
     FOREIGN KEY (usuario_id)
-    REFERENCES items(id_usuario)
+    REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE slots (
@@ -87,22 +87,19 @@ CREATE TABLE salvaje (
   id_ataque_3 number NOT NULL,
   id_ataque_4 number NOT NULL,
   CONSTRAINT salvaje_pk PRIMARY KEY (id_salvaje),
-  CONSTRAINT fk_ataques
-    FOREIGN KEY (id_ataque_1,id_ataque_2,id_ataque_3,id_ataque_4)
+  CONSTRAINT fk_ataque_1
+    FOREIGN KEY (id_ataque_1)
+    REFERENCES ataques(id_ataque),
+  CONSTRAINT fk_ataque_2
+    FOREIGN KEY (id_ataque_2)
+    REFERENCES ataques(id_ataque),
+  CONSTRAINT fk_ataque_3
+    FOREIGN KEY (id_ataque_3)
+    REFERENCES ataques(id_ataque),
+  CONSTRAINT fk_ataque_4
+    FOREIGN KEY (id_ataque_4)
     REFERENCES ataques(id_ataque),
   CONSTRAINT fk_pokemon
     FOREIGN KEY (pokemon_id)
     REFERENCES pokemon(id_pokemon)
-);
-
-CREATE TABLE pokedex (
-  usuario_id number,
-  salvaje_id number,
-  estado number(1),
-  CONSTRAINT fk_usuario
-    FOREIGN KEY (usuario_id)
-    REFERENCES usuario(id_usuario),
-  CONSTRAINT fk_salvaje
-    FOREIGN KEY (salvaje_id)
-    REFERENCES salvaje(id_salvaje)
 );
