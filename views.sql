@@ -31,4 +31,5 @@ CREATE OR REPLACE VIEW view_maestros AS
   SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.puntos
   FROM adquisicion, usuario, logros
   WHERE usuario.ID_USUARIO = adquisicion.USUARIO_ID AND
-        adquisicion.LOGRO_ID = 1;
+        adquisicion.LOGRO_ID = logros.ID_LOGRO AND
+        logros.NOMBRE_LOGRO = 'maestro pokemon';
