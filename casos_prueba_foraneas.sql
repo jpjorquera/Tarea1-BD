@@ -9,3 +9,7 @@ INSERT ALL
   INTO slots (mochila_id, item_id, cantidad) VALUES (3, 2, 50)
   INTO slots (mochila_id, item_id, cantidad) VALUES (3, 3, 50)
 SELECT * FROM dual;
+
+INSERT ALL
+  INTO adquisicion (logro_id, usuario_id, nivel) VALUES (1, 1, 20)
+SELECT * FROM dual;

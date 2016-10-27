@@ -13,10 +13,10 @@ CREATE VIEW view_pokedex AS
   		pokedex.SALVAJE_ID = salvaje.ID_SALVAJE AND
   		salvaje.POKEMON_ID = pokemon.ID_POKEMON;
 
-CREATE VIEW view_logros AS
-  SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.ID_LOGRO
+CREATE OR REPLACE VIEW view_logros AS
+  SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.NOMBRE_LOGRO
   FROM logros,usuario,adquisicion
-  WHERE usuario.ID_LOGRO = adquisicion.USUARIO_ AND
+  WHERE usuario.ID_USUARIO = adquisicion.USUARIO_ID AND
   		adquisicion.LOGRO_ID = logros.id_logro;
 
 CREATE VIEW view_maestros AS
