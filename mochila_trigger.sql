@@ -1,0 +1,10 @@
+CREATE SEQUENCE mochila_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER mochila_t 
+BEFORE INSERT ON mochila
+FOR EACH ROW
+BEGIN
+  SELECT mochila_seq.NEXTVAL
+  INTO   :new.id_mochila
+  FROM   dual;
+END;
