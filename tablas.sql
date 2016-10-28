@@ -68,24 +68,25 @@ CREATE TABLE mochila (
 
 CREATE TABLE slots (
   mochila_id number NOT NULL,
-  item_id number UNIQUE NOT NULL,
+  item_id number NOT NULL,
   cantidad number,
   CONSTRAINT fk_items
     FOREIGN KEY (item_id)
     REFERENCES items(id_item),
   CONSTRAINT fk_mochila
     FOREIGN KEY (mochila_id)
-    REFERENCES mochila(id_mochila)
+    REFERENCES mochila(id_mochila),
+  CONSTRAINT slots_unique UNIQUE (mochila_id, item_id)
 );
 
 CREATE TABLE salvaje (
   id_salvaje number NOT NULL,
   potenciador number,
-  pokemon_id number UNIQUE NOT NULL,
+  pokemon_id number NOT NULL,
   id_ataque_1 number NOT NULL,
-  id_ataque_2 number NOT NULL,
-  id_ataque_3 number NOT NULL,
-  id_ataque_4 number NOT NULL,
+  id_ataque_2 number,
+  id_ataque_3 number,
+  id_ataque_4 number,
   CONSTRAINT salvaje_pk PRIMARY KEY (id_salvaje),
   CONSTRAINT fk_ataque_1
     FOREIGN KEY (id_ataque_1)
