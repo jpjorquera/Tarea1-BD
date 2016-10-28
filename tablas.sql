@@ -60,6 +60,7 @@ CREATE TABLE mochila (
   id_mochila number NOT NULL,
   usuario_id number UNIQUE NOT NULL,
   estado number(1) DEFAULT 0,
+  ocupados number DEFAULT 0,
   CONSTRAINT mochila_pk PRIMARY KEY (id_mochila),
   CONSTRAINT fk_usuario_mochila
     FOREIGN KEY (usuario_id)

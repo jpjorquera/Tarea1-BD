@@ -21,3 +21,12 @@ INSERT INTO salvaje (id_salvaje, pokemon_id, id_ataque_1) VALUES (4, 4, 5);
 INSERT INTO salvaje (id_salvaje, pokemon_id, id_ataque_1) VALUES (5, 5, 1);
 INSERT INTO salvaje (id_salvaje, pokemon_id, id_ataque_1) VALUES (6, 2, 1);
 INSERT INTO salvaje (id_salvaje, pokemon_id, id_ataque_1) VALUES (7, 6, 4);
+
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (1, 1, 1);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (2, 2, 1);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (1, 2, 0);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (2, 1, 0);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (1, 3, 1);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (1, 6, 0);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 4, 1);
+INSERT INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 3, 0);
