@@ -9,3 +9,4 @@ Aclaraciones:
 - ** Modificación al modelo: se agregó un atributo ‘ocupados’ a mochila para llevar la cuenta del espacio usado en ella.
 - Se modificaron los nombres de algunos atributos para evitar ambigüedades en nuestra base de datos como: nombre -> nombre_pokemon.
 - Para procedure_maestro se requiere de dbms_output para ver la salida.
+- La cantidad de pokemon depende del id de estos, por lo que se requiere ids ordenados a partir de 1.
