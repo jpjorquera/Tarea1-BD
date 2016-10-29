@@ -22,14 +22,6 @@ CREATE OR REPLACE VIEW view_logros AS
         adquisicion.LOGRO_ID = logros.id_logro
   ORDER BY usuario.ID_USUARIO;
 
-
-/*CREATE VIEW view_maestros AS
-  SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.puntos
-  FROM pokemon, salvaje, pokedex,usuario
-  WHERE usuario.ID_USUARIO = pokedex.USUARIO_ID AND
-  		(SELECT SUM(pokedex.ESTADO) FROM pokedex) = (SELECT poke_seq.NEXTVAL FROM dual)-1 AND
-  		(ALTER SEQUENCE seq_name INCREMENT BY -1);*/
-
 CREATE OR REPLACE VIEW view_maestros AS
   SELECT usuario.ID_USUARIO, usuario.NOMBRE_USUARIO, logros.puntos
   FROM adquisicion, usuario, logros

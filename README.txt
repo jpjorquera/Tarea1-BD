@@ -8,3 +8,4 @@ Aclaraciones:
 - Al agregar a una mochila más de lo posible, se modifica la cantidad para que sólo se llene ésta.
 - ** Modificación al modelo: se agregó un atributo ‘ocupados’ a mochila para llevar la cuenta del espacio usado en ella.
 - Se modificaron los nombres de algunos atributos para evitar ambigüedades en nuestra base de datos como: nombre -> nombre_pokemon.
+- Para procedure_maestro se requiere de dbms_output para ver la salida.
