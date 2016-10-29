@@ -45,15 +45,16 @@ CREATE TABLE logros(
 );
 
 CREATE TABLE adquisicion (
-  logro_id number UNIQUE NOT NULL,
-  usuario_id number UNIQUE NOT NULL,
+  logro_id number NOT NULL,
+  usuario_id number NOT NULL,
   nivel number,
   CONSTRAINT fk_logros
     FOREIGN KEY (logro_id)
     REFERENCES logros(id_logro),
   CONSTRAINT fk_usuario_adquisicion
     FOREIGN KEY (usuario_id)
-    REFERENCES usuario(id_usuario)
+    REFERENCES usuario(id_usuario),
+  CONSTRAINT adq_unique UNIQUE (logro_id, usuario_id)
 );
 
 CREATE TABLE mochila (

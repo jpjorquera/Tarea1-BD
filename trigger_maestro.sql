@@ -6,6 +6,7 @@ CREATE OR REPLACE TRIGGER trigger_maestro
       n_pokemones number;
       n_logro number;
       isMaster number;
+      actual number;
     BEGIN
       SELECT total INTO atrapados FROM
       (SELECT usuario_id, SUM(estado) AS total FROM
@@ -15,6 +16,12 @@ CREATE OR REPLACE TRIGGER trigger_maestro
       WHERE estado > 0)
       GROUP BY usuario_id)
       WHERE usuario_id = :new.usuario_id;
+      
+      SELECT COUNT(*) INTO actual FROM pokedex
+      WHERE usuario_id = :new.usuario_id AND estado > 1;
+      IF (actual = 0) THEN
+        atrapados := atrapados + 1;
+      END IF;
       
       SELECT MAX(id_pokemon) INTO n_pokemones FROM pokemon;
       SELECT id_logro INTO n_logro FROM logros WHERE nombre_logro = 'maestro pokemon';
