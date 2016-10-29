@@ -6,9 +6,16 @@ CREATE OR REPLACE TRIGGER trigger_mochila
       diff number;
       status number;
     BEGIN
-      SELECT ocupados INTO used
-      FROM mochila
-      WHERE mochila.id_mochila = :old.mochila_id;
+      IF DELETING THEN
+        SELECT ocupados INTO used
+        FROM mochila
+        WHERE mochila.id_mochila = :old.mochila_id;
+      ELSE
+        SELECT ocupados INTO used
+        FROM mochila
+        WHERE mochila.id_mochila = :new.mochila_id;
+      END IF;
+      
       IF INSERTING THEN
         IF (used + :new.cantidad > 100) THEN
           :new.cantidad := 100 - used;
