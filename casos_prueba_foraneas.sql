@@ -46,6 +46,7 @@ INSERT ALL
   INTO pokedex (usuario_id, salvaje_id, estado) VALUES (2, 4, 1)
   INTO pokedex (usuario_id, salvaje_id, estado) VALUES (2, 3, 0)
   
+  INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 1, 0)
   INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 3, 1)
   INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 4, 1)
   INTO pokedex (usuario_id, salvaje_id, estado) VALUES (3, 5, 1)
