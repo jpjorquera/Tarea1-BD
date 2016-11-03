@@ -1,4 +1,4 @@
-create or replace PROCEDURE procedure_maestro (par IN number)
+create or replace PROCEDURE procedure_maestro_alternative (par IN number)
   IS
   BEGIN
     FOR rec IN(
@@ -19,4 +19,4 @@ create or replace PROCEDURE procedure_maestro (par IN number)
       dbms_output.put_line(rec.ID_POKEMON || ' , ' || rec.NOMBRE_POKEMON);
   END LOOP;
 
-  END procedure_maestro;
+  END procedure_maestro_alternative;
